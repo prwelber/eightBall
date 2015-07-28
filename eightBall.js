@@ -22,7 +22,7 @@ var answerArray = ['It is certain',
 'My reply is no',
 'My sources say no',
 'Outlook not so good',
-'Very doubtful',];
+'Very doubtful'];
 
 var server = net.createServer(function(connection){
 	console.log('connected to client');
@@ -30,8 +30,7 @@ var server = net.createServer(function(connection){
 	connection.write('welcome to the magic 8-ball. Ask a question, please.' +"\n");
 
 	connection.on('data', function(userQuestion){
-		var cleanQuestion = userQuestion.trim().split(" ");
-		var cleanQuestion = cleanQuestion.join().replace(/,/g, " ");
+		var cleanQuestion = userQuestion.trim();
 		console.log(cleanQuestion);
 
 		if (cleanQuestion.indexOf('?') >= 0){	
